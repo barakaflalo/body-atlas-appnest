@@ -1,0 +1,42 @@
+const CACHE='atlas-v1';
+const ASSETS=[
+  './',
+  'index.html',
+  'manifest.json',
+  'icon-192.png',
+  'icon-512.png',
+  'privacy_policy.html',
+  'assets/acusim/asher_c.webp',
+  'assets/acusim/grace_e.webp',
+  'assets/acusim/minami_a.webp',
+  'assets/acusim/novak_e.webp',
+  'assets/foot-reflexology-chart.jpg',
+  'assets/meridian-map.webp',
+  'assets/meridians/BL.webp',
+  'assets/meridians/CV.webp',
+  'assets/meridians/GB.webp',
+  'assets/meridians/GV.webp',
+  'assets/meridians/HT.webp',
+  'assets/meridians/KI.webp',
+  'assets/meridians/LI.webp',
+  'assets/meridians/LR.webp',
+  'assets/meridians/LU.webp',
+  'assets/meridians/PC.webp',
+  'assets/meridians/SI.webp',
+  'assets/meridians/SP.webp',
+  'assets/meridians/ST.webp',
+  'assets/meridians/TE.webp',
+  'assets/reflexology-side-inner.jpg',
+  'assets/reflexology-side-outer.jpg',
+  'assets/reflexology-sides-top.jpg',
+  'assets/reflexology-soles.jpg',
+  'assets/reflexology-top.jpg'
+];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',e=>{
+  if(e.request.method!=='GET')return;
+  e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request).then(res=>{
+    const copy=res.clone();caches.open(CACHE).then(c=>c.put(e.request,copy)).catch(()=>{});return res;
+  }).catch(()=>caches.match('index.html'))));
+});
