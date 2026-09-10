@@ -1,4 +1,4 @@
-const CACHE='atlas-v4';
+const CACHE='atlas-v5';
 const ASSETS=[
   './',
   'index.html',
@@ -10,7 +10,6 @@ const ASSETS=[
   'assets/acusim/grace_e.webp',
   'assets/acusim/minami_a.webp',
   'assets/acusim/novak_e.webp',
-  'assets/foot-reflexology-chart.jpg',
   'assets/meridian-map.webp',
   'assets/meridians/BL.webp',
   'assets/meridians/CV.webp',
