@@ -22,7 +22,7 @@ const I18N={
    safety:'המידע מיועד ללימוד והעשרה בלבד ואינו ייעוץ, אבחון או טיפול רפואי. אין ללחוץ על פצע, נפיחות או כאב חד; בכל ספק — היוועצו באיש מקצוע מוסמך.',
    set:'הגדרות',name:'שם משתמש',lang:'שפה',palette:'ערכת צבע',mode:'מצב',day:'יום',night:'לילה',
    aiTitle:'עוזר AI מקוון (אופציונלי)',aiNote:'כאשר משתמשים בעוזר, השאלה נשלחת לספק ה־AI שבחרתם. מפתח הגישה נשמר בדפדפן במכשיר הזה; אין להזין מידע רפואי אישי או להשתמש במכשיר משותף.',aiKey:'מפתח API',aiNone:'ללא',backup:'גיבוי',restore:'שחזור',wipe:'מחיקת הכול',
-   about:'מקורות ואודות',guide:'מדריך',start:'בואו נתחיל',welcome:'ברוכים הבאים לאטלס הגוף',
+   about:'מקורות ואודות',abTagline:'אטלס לימודי לרפלקסולוגיה, נקודות הגוף והמרידיאנים',abAppTitle:'על האפליקציה',abAppBody:'אפליקציית לימוד (PWA) שעובדת גם ללא אינטרנט לאחר טעינה ראשונה. אין חשבון ואין שרת — כל המידע, ההגדרות והמועדפים נשמרים במכשיר שלך בלבד. עוזר ה-AI הוא רשות (BYOK) והמפתח נשמר מקומית.',abShare:'שיתוף האפליקציה',abShareMsg:'אטלס הגוף — אפליקציית לימוד לרפלקסולוגיה ולנקודות הגוף',abStore:'עוד אפליקציות שלי — חנות AppNest',abDevTitle:'המפַתח',abDevBody:'פותח, עוצב ותורגם על ידי ברק אפללו · AppNest.',abCopied:'הקישור הועתק ✓',ver:'גרסה',guide:'מדריך',start:'בואו נתחיל',welcome:'ברוכים הבאים לאטלס הגוף',
    onbo:'עיון חופשי ברפלקסולוגיה, בנקודות הגוף ובמרידיאנים — הכול נשמר במכשיר, עובד גם בלי אינטרנט.',
    srcTitle:'מקורות',srcBody:'נקודות ומרידיאנים לפי תקן ה־WHO 2008 (מאגר TARA). סימוני הנקודות על הגוף מבוססים על acuSim (רישיון CC BY 4.0). מפות רפלקסולוגיה ומדריכים בעברית — להמחשה לימודית, טעונים בדיקה מקצועית.',
    quizScore:s=>`${s} תשובות נכונות`,again:'עוד סבב',flashcards:'כרטיסיות',quiz:'חידון',flip:'הפוך',next:'הבא',
@@ -40,7 +40,7 @@ const I18N={
    safety:'For learning and enrichment only — not medical advice, diagnosis or treatment. Never press on a wound, swelling or sharp pain; when in doubt, consult a licensed professional.',
    set:'Settings',name:'User name',lang:'Language',palette:'Color palette',mode:'Mode',day:'Day',night:'Night',
    aiTitle:'AI assistant (optional)',aiNote:'Connect a key to chat with the assistant. The key is stored only on your device.',aiKey:'API key',aiNone:'None',backup:'Backup',restore:'Restore',wipe:'Delete all',
-   about:'Sources & about',guide:'Guide',start:'Let’s start',welcome:'Welcome to Body Atlas',
+   about:'Sources & about',abTagline:'A learning atlas for reflexology, body points and meridians',abAppTitle:'About the app',abAppBody:'A learning app (PWA) that works offline after the first load. No account, no server — all content, settings and favorites stay on your device only. The AI assistant is optional (BYOK) and its key is stored locally.',abShare:'Share the app',abShareMsg:'Body Atlas — a learning app for reflexology and body points',abStore:'More of my apps — AppNest store',abDevTitle:'Developer',abDevBody:'Built, designed and translated by Barak Aflalo · AppNest.',abCopied:'Link copied ✓',ver:'Version',guide:'Guide',start:'Let’s start',welcome:'Welcome to Body Atlas',
    onbo:'Freely browse reflexology, body points and meridians — everything is stored on your device and works offline.',
    srcTitle:'Sources',srcBody:'Points and meridians follow the WHO 2008 standard (TARA dataset). On-body point markers are based on acuSim (CC BY 4.0). Reflexology maps and Hebrew guides are educational and pending professional review.',
    quizScore:s=>`${s} correct`,again:'Play again',flashcards:'Flashcards',quiz:'Quiz',flip:'Flip',next:'Next',
@@ -660,17 +660,34 @@ function doWipe(){if(!confirm(t('wipeConfirm1')))return;if(!confirm(t('wipeConfi
   favs=[];LANG='he';applySettings();applyLang();route('home');}
 
 /* ---------- ABOUT ---------- */
+const STORE_URL='https://barakaflalo.github.io/appnest';
+const APP_VER='3.3';
+function toast(msg){let el=document.getElementById('atlas-toast');if(!el){el=document.createElement('div');el.id='atlas-toast';el.style.cssText='position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:#141418;color:#EDE6D6;border:1px solid #C9A84C55;border-radius:20px;padding:9px 16px;font:14px "Segoe UI",sans-serif;z-index:100001;box-shadow:0 6px 20px rgba(0,0,0,.5);opacity:0;transition:opacity .2s;';document.body.appendChild(el);}el.textContent=msg;el.style.opacity='1';clearTimeout(el._t);el._t=setTimeout(function(){el.style.opacity='0';},1800);}
+function shareApp(){var url=location.href.split('#')[0];var data={title:'אטלס הגוף · Body Atlas',text:t('abShareMsg'),url:url};if(navigator.share){navigator.share(data).catch(function(){});return;}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){toast(t('abCopied'));},function(){});return;}try{var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);toast(t('abCopied'));}catch(e){}}
 function aboutScreen(){
   $('#view').innerHTML=`<div class="screen learn-wrap">
-   <div class="section-head"><div><div class="eyebrow">AppNest</div><h2>${t('about')}</h2></div></div>
-   <div class="card" style="padding:18px"><b>${t('srcTitle')}</b><p style="line-height:1.8;margin:8px 0 0;color:var(--muted)">${t('srcBody')}</p></div>
-   <div class="card warn" style="margin-top:12px">${t('safety')}</div>
+   <div class="section-head"><div><div class="eyebrow">AppNest · ${t('ver')} ${APP_VER}</div><h2>${t('about')}</h2></div></div>
+   <div class="card" style="padding:18px">
+     <b style="font-size:18px">${LANG==='he'?'אטלס הגוף':'Body Atlas'}</b>
+     <p style="margin:6px 0 0;color:var(--muted);line-height:1.7">${t('abTagline')}</p>
+   </div>
+   <div class="card" style="padding:18px;margin-top:12px"><b>${t('abAppTitle')}</b>
+     <p style="line-height:1.8;margin:8px 0 0;color:var(--muted)">${t('abAppBody')}</p></div>
+   <div class="setrow" style="margin-top:12px;gap:10px;flex-wrap:wrap">
+     <button class="btn" data-share>📤 ${t('abShare')}</button>
+     <a class="btn ghost" href="${STORE_URL}" target="_blank" rel="noopener">🏠 ${t('abStore')}</a>
+   </div>
+   <div class="card" style="padding:18px;margin-top:12px"><b>${t('abDevTitle')}</b>
+     <p style="line-height:1.8;margin:8px 0 0;color:var(--muted)">${t('abDevBody')}</p></div>
+   <div class="card" style="padding:18px;margin-top:12px"><b>${t('srcTitle')}</b>
+     <p style="line-height:1.8;margin:8px 0 0;color:var(--muted)">${t('srcBody')}</p></div>
    <div class="card" style="padding:18px;margin-top:12px;color:var(--muted)">
      <p style="margin:0 0 6px">WHO Standard Acupuncture Point Locations, 2008</p>
      <p style="margin:0 0 6px">TARA Acupoints Ontology</p>
      <p style="margin:0">acuSim body placements — CC BY 4.0</p>
    </div>
-   <p style="text-align:center;color:var(--muted);margin-top:18px"><a href="privacy_policy.html">Privacy</a> · AppNest © 2026</p>
+   <div class="card warn" style="margin-top:12px">${t('safety')}</div>
+   <p style="text-align:center;color:var(--muted);margin-top:18px"><a href="privacy_policy.html">Privacy</a> · AppNest © 2026 · ${t('ver')} ${APP_VER}</p>
   </div>`;
 }
 
@@ -701,6 +718,7 @@ document.addEventListener('click',e=>{
     if(it.opts[i].ok)quizScore++;
     setTimeout(()=>{quizIdx++;quizStep();},900);return;}
   if(e.target.closest('[data-qagain]')){buildQuiz();quizStep();return;}
+  if(e.target.closest('[data-share]')){shareApp();return;}
   if(e.target.closest('[data-install]')){
     if(isStandalone())return;
     if(installPrompt){installPrompt.prompt();installPrompt.userChoice.finally(()=>{installPrompt=null;if(screen==='home')homeScreen();});}
