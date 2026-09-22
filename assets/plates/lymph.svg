@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="933" viewBox="0 0 1400 933" role="img" aria-labelledby="t d">
+<title id="t">Lymph flow — conceptual diagram</title><desc id="d">Tissue fluid enters lymph vessels, passes through lymph nodes and returns to the venous circulation. This is a conceptual flow, not an anatomical map.</desc>
+<defs><radialGradient id="bg"><stop stop-color="#204b4d"/><stop offset="1" stop-color="#091e24"/></radialGradient><linearGradient id="line"><stop stop-color="#81cfc5"/><stop offset="1" stop-color="#deb483"/></linearGradient><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="none" stroke="#b2dace" stroke-width="2"/></marker></defs>
+<rect width="1400" height="933" fill="url(#bg)"/>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#f3e4c9"><text x="700" y="122" font-size="24" letter-spacing="6">LYMPHATIC CIRCULATION</text><text x="700" y="178" font-size="26">זרימת הלימפה — סכמה מושגית</text></g>
+<g stroke="url(#line)" stroke-width="7" fill="none" marker-end="url(#arrow)"><path d="M325 455H475"/><path d="M620 455H765"/><path d="M930 455H1060"/></g>
+<g fill="#143c40" stroke="#83c6bc" stroke-width="3"><circle cx="230" cy="455" r="89"/><circle cx="560" cy="455" r="89"/><circle cx="850" cy="455" r="89"/><circle cx="1160" cy="455" r="89"/></g>
+<g fill="#8bd1c6"><circle cx="206" cy="433" r="9"/><circle cx="245" cy="424" r="7"/><circle cx="234" cy="466" r="12"/><circle cx="205" cy="487" r="7"/><circle cx="263" cy="485" r="7"/></g>
+<g stroke="#e1bc8f" fill="none" stroke-width="7"><path d="M531 410V492M558 411V492M585 410V492M531 454L543 468 552 454M562 450L574 464 585 450"/><path d="M825 406C781 411 799 483 839 491C881 499 905 463 887 433C874 409 862 448 846 437C829 427 850 402 825 406Z"/><path d="M1112 455H1207M1179 426L1207 455 1179 484"/></g>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#f0e0c5" font-size="25"><text x="230" y="609">נוזל בין־תאי</text><text x="560" y="609">כלי לימפה</text><text x="850" y="609">קשרי לימפה</text><text x="1160" y="609">חזרה לוורידים</text></g>
+<g font-family="Arial,sans-serif" text-anchor="middle" fill="#a6c2bd" font-size="20"><text x="230" y="645">Tissue fluid</text><text x="560" y="645">Lymph vessels</text><text x="850" y="645">Lymph nodes</text><text x="1160" y="645">Venous return</text><text x="700" y="795">Conceptual flow • Not an anatomical location chart</text></g>
+</svg>

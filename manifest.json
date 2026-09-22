@@ -1,5 +1,5 @@
 {
-  "name": "אטלס הגוף — AppNest",
+  "name": "אטלס הגוף 3.3 — למידה חזותית",
   "short_name": "אטלס הגוף",
   "description": "אטלס לימודי אינטראקטיבי לרפלקסולוגיה, נקודות גוף ומרידיאנים",
   "lang": "he",
@@ -7,11 +7,22 @@
   "start_url": "index.html",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
-  "background_color": "#0d0d0f",
-  "theme_color": "#0d0d0f",
+  "orientation": "any",
+  "background_color": "#0b2028",
+  "theme_color": "#0b2028",
   "icons": [
-    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
-    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
-  ]
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "id": "./"
 }

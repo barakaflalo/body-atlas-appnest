@@ -1,0 +1,75 @@
+{
+  "newPointNotes": 215,
+  "expandedAnatomyViews": 6,
+  "learningPaths": 8,
+  "courseSteps": 24,
+  "markerAdjustments": 13,
+  "landmarkLinks": 1131,
+  "adaptiveChecks": true,
+  "newFocusedExternalChecks": 8,
+  "schematicViews": 22,
+  "pointMarkers": 361,
+  "landmarkTranslations": 275,
+  "sourceCorrections": 2,
+  "landmarkLabelCorrections": 3,
+  "authoredPointNotes": 361,
+  "locationVariants": 6,
+  "visualQuizRoundsChecked": 60,
+  "version": "3.3.0",
+  "points": 361,
+  "zones": 57,
+  "meridians": 14,
+  "renderedCards": 836,
+  "renderedRouteSections": 126,
+  "languages": [
+    "he",
+    "en"
+  ],
+  "illustrationFiles": 25,
+  "imagesReferencedInRender": 25,
+  "checks": [
+    "361 individually edited point explanations, including 215 new notes",
+    "six new drawings in three layers, hand bone counts and mirror orientation",
+    "eight scoped course quizzes, completion tracking, legacy session migration and course backup roundtrip",
+    "13 schematic alignment changes and preserved source provenance",
+    "all 1131 landmark links resolve to a defined highlight",
+    "six alternatives render in primary, alternative and comparison modes",
+    "adaptive priority, hint handling, 3-day scheduling, resume and history deduplication",
+    "backup export includes validated learning progress",
+    "all 361 point diagrams have source landmarks and a selected marker",
+    "SI2 and SI3 copied descriptions corrected, with opposite-side joint positions",
+    "six source alternatives identified",
+    "visual quiz choices belong to the correct view with no duplicate choices",
+    "visual quiz answer locking, full-round scoring and backup validation",
+    "all point and zone cards render",
+    "each point belongs to exactly one route section",
+    "all zones appear on their assigned foot map",
+    "all referenced image files exist",
+    "Hebrew niqqud-insensitive search",
+    "quiz choices unique with exactly one correct answer",
+    "backup allowlist and invalid input rejection",
+    "user-name attribute escaping",
+    "offline manifest files present",
+    "JavaScript and gallery syntax"
+  ],
+  "browserQA": {
+    "date": "2026-09-22",
+    "responsiveViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "languages": [
+      "he",
+      "en"
+    ],
+    "physicalDevice": false,
+    "offlineServerStopped": true,
+    "courseResume": "question 2 of 6 restored",
+    "savedStepRestored": true,
+    "finalMarkerObserved": {
+      "code": "SI 4",
+      "x": 648,
+      "y": 810
+    }
+  }
+}

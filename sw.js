@@ -1,41 +1,13 @@
-const CACHE='atlas-v5';
-const ASSETS=[
-  './',
-  'index.html',
-  'manifest.json',
-  'icon-192.png',
-  'icon-512.png',
-  'privacy_policy.html',
-  'assets/acusim/asher_c.webp',
-  'assets/acusim/grace_e.webp',
-  'assets/acusim/minami_a.webp',
-  'assets/acusim/novak_e.webp',
-  'assets/meridian-map.webp',
-  'assets/meridians/BL.webp',
-  'assets/meridians/CV.webp',
-  'assets/meridians/GB.webp',
-  'assets/meridians/GV.webp',
-  'assets/meridians/HT.webp',
-  'assets/meridians/KI.webp',
-  'assets/meridians/LI.webp',
-  'assets/meridians/LR.webp',
-  'assets/meridians/LU.webp',
-  'assets/meridians/PC.webp',
-  'assets/meridians/SI.webp',
-  'assets/meridians/SP.webp',
-  'assets/meridians/ST.webp',
-  'assets/meridians/TE.webp',
-  'assets/reflexology-side-inner.jpg',
-  'assets/reflexology-side-outer.jpg',
-  'assets/reflexology-sides-top.jpg',
-  'assets/reflexology-soles.jpg',
-  'assets/reflexology-top.jpg'
-];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()));});
-self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()));});
-self.addEventListener('fetch',e=>{
-  if(e.request.method!=='GET')return;
-  e.respondWith(caches.match(e.request).then(hit=>hit||fetch(e.request).then(res=>{
-    const copy=res.clone();caches.open(CACHE).then(c=>c.put(e.request,copy)).catch(()=>{});return res;
-  }).catch(()=>caches.match('index.html'))));
+'use strict';
+const PREFIX='body-atlas-v3-'+encodeURIComponent(new URL(self.registration.scope).pathname)+'-';
+const CACHE=PREFIX+'af1c6b288b09';
+const FILES=["./","index.html","atlas-data.js","atlas-engine.js","atlas-pro.js","atlas-diagrams.js","atlas-pro.css","atlas-detail.css","atlas-detail-data.js","atlas-detail-diagrams.js","atlas-detail.js","atlas-learning-data.js","atlas-landmarks.js","atlas-study.js","atlas-study.css","atlas-anatomy.js","atlas-anatomy.css","atlas-courses.js","point-atlas.html","review-register.html","assistant.js","manifest.json","icon-192.png","icon-512.png","privacy_policy.html","illustration-atlas.html","assets/plates/arm-palmar.webp","assets/plates/brain.webp","assets/plates/digestive.webp","assets/plates/endocrine.webp","assets/plates/feet-soles.webp","assets/plates/foot-dorsal.webp","assets/plates/foot-lateral.webp","assets/plates/foot-medial.webp","assets/plates/hand-dorsal-detail.webp","assets/plates/hand-palmar-detail.webp","assets/plates/head-front.webp","assets/plates/head-side.webp","assets/plates/heart.webp","assets/plates/joints.webp","assets/plates/leg-back.webp","assets/plates/leg-front.webp","assets/plates/leg-lateral.webp","assets/plates/leg-medial.webp","assets/plates/lymph.svg","assets/plates/pelvis.webp","assets/plates/respiratory.webp","assets/plates/senses.webp","assets/plates/spine.webp","assets/plates/torso-back.webp","assets/plates/urinary.webp"];
+const BASE=self.registration.scope;
+const urls=new Set(FILES.map(p=>new URL(p,BASE).href));
+self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(FILES);await cache.put(new URL('offline-ready',BASE).href,new Response('ready'));await self.skipWaiting();})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const k of await caches.keys())if((k.startsWith(PREFIX)||k==='atlas-v31')&&k!==CACHE)await caches.delete(k);await self.clients.claim();for(const c of await self.clients.matchAll())c.postMessage({type:'BODY_ATLAS_READY'});})()));
+self.addEventListener('fetch',event=>{const req=event.request,url=new URL(req.url);if(req.method!=='GET'||url.origin!==self.location.origin)return;
+ if(req.mode==='navigate'&&url.href.startsWith(BASE)){event.respondWith((async()=>{try{return await fetch(req);}catch{const cache=await caches.open(CACHE);return await cache.match(url.href)||await cache.match(new URL('index.html',BASE).href);}})());return;}
+ if(!urls.has(url.href))return;
+ event.respondWith((async()=>{const cache=await caches.open(CACHE);return await cache.match(req)||fetch(req);})());
 });

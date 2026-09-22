@@ -1,0 +1,236 @@
+{
+  "version": "3.3.0",
+  "date": "2026-09-22",
+  "scope": "Editorial consistency of supplied location text with schematic geometry; not clinical validation",
+  "changes": [
+    {
+      "code": "LU 10",
+      "previous": {
+        "view": "handPalm",
+        "x": 300,
+        "y": 590
+      },
+      "he": "הסימון הוצב בצד הרדיאלי של אמצע עצם המסרק הראשונה בשכבה החדשה.",
+      "en": "Marker aligned to the radial side of the first metacarpal midpoint in the new layer.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handPalm",
+        "x": 310,
+        "y": 665
+      }
+    },
+    {
+      "code": "LU 11",
+      "previous": {
+        "view": "handPalm",
+        "x": 192,
+        "y": 402
+      },
+      "he": "נוסף מבט גבי עם ציפורן אגודל; הסימון סמוך לפינה הרדיאלית של בסיס הציפורן.",
+      "en": "Dorsal view with thumbnail; marker near its radial proximal corner.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 180,
+        "y": 454
+      }
+    },
+    {
+      "code": "HT 9",
+      "previous": {
+        "view": "handPalm",
+        "x": 652,
+        "y": 305
+      },
+      "he": "הועברה למבט גבי עם ציפורן זרת; סמוך לפינה הרדיאלית של הבסיס.",
+      "en": "Moved to dorsal view with little-finger nail; near its radial proximal corner.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 650,
+        "y": 360
+      }
+    },
+    {
+      "code": "LI 1",
+      "previous": {
+        "view": "handBack",
+        "x": 335,
+        "y": 215
+      },
+      "he": "הסימון הוזז אל אזור הפינה הרדיאלית של בסיס ציפורן המורה.",
+      "en": "Marker moved to the radial proximal corner region of the index nail.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 330,
+        "y": 250
+      }
+    },
+    {
+      "code": "TE 1",
+      "previous": {
+        "view": "handBack",
+        "x": 608,
+        "y": 204
+      },
+      "he": "הסימון הוזז אל אזור הפינה האולנרית של בסיס ציפורן הקמיצה.",
+      "en": "Marker moved to the ulnar proximal corner region of the ring-finger nail.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 608,
+        "y": 245
+      }
+    },
+    {
+      "code": "SI 1",
+      "previous": {
+        "view": "handBack",
+        "x": 713,
+        "y": 312
+      },
+      "he": "הסימון הוזז אל אזור הפינה האולנרית של בסיס ציפורן הזרת.",
+      "en": "Marker moved to the ulnar proximal corner region of the little-finger nail.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 710,
+        "y": 360
+      }
+    },
+    {
+      "code": "LI 4",
+      "previous": {
+        "view": "handBack",
+        "x": 375,
+        "y": 564
+      },
+      "he": "הסימון הותאם לצד הרדיאלי של אמצע עצם המסרק השנייה.",
+      "en": "Marker aligned to the radial side of the second metacarpal midpoint.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 350,
+        "y": 620
+      }
+    },
+    {
+      "code": "ST 3",
+      "previous": {
+        "view": "face",
+        "x": 400,
+        "y": 554
+      },
+      "he": "גובה הסימון הותאם לגבול התחתון של כנף האף.",
+      "en": "Marker level aligned with the inferior border of the nasal ala.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "face",
+        "x": 400,
+        "y": 568
+      }
+    },
+    {
+      "code": "ST 4",
+      "previous": {
+        "view": "face",
+        "x": 430,
+        "y": 625
+      },
+      "he": "הסימון הופרד מזווית הפה לצד הלטרלי.",
+      "en": "Marker separated laterally from the mouth corner.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "face",
+        "x": 410,
+        "y": 625
+      }
+    },
+    {
+      "code": "BL 63",
+      "previous": {
+        "view": "footLateral",
+        "x": 455,
+        "y": 575
+      },
+      "he": "הסימון הוזז מתחת לעצם הקובייה, אחורית לבסיס המסרק החמישי.",
+      "en": "Marker moved inferior to the cuboid and posterior to the fifth metatarsal base.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "footLateral",
+        "x": 455,
+        "y": 615
+      }
+    },
+    {
+      "code": "BL 64",
+      "previous": {
+        "view": "footLateral",
+        "x": 540,
+        "y": 650
+      },
+      "he": "הסימון הופרד מבסיס המסרק החמישי לכיוון דיסטלי.",
+      "en": "Marker separated distally from the fifth metatarsal base.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "footLateral",
+        "x": 575,
+        "y": 660
+      }
+    },
+    {
+      "code": "SI 4",
+      "previous": {
+        "view": "handBack",
+        "x": 660,
+        "y": 760
+      },
+      "he": "הסימון הותאם למרווח שבין בסיס המסרק החמישי לעצם המשולשת בשכבת העצמות החדשה.",
+      "en": "Marker aligned between the fifth metacarpal base and triquetrum in the new bone layer.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 648,
+        "y": 810
+      }
+    },
+    {
+      "code": "SI 5",
+      "previous": {
+        "view": "handBack",
+        "x": 650,
+        "y": 835
+      },
+      "he": "הסימון הותאם למרווח שבין זיז הגומד לעצם המשולשת בשכבת העצמות החדשה.",
+      "en": "Marker aligned between the ulnar styloid and triquetrum in the new bone layer.",
+      "basis": "supplied-description-and-schematic-alignment",
+      "clinicalStatus": "pending",
+      "current": {
+        "view": "handBack",
+        "x": 640,
+        "y": 850
+      }
+    }
+  ],
+  "sourceConflicts": [
+    {
+      "code": "SP 19",
+      "he": "בהערת המקור מופיע ST 6, בעוד התיאור עוסק בבית החזה. השוואת הלימוד משתמשת ב־ST 16 על סמך תיאורי המיקום הראשיים של שתי הרשומות. זוהי הכרעה עריכתית שממתינה לבדיקת איש מקצוע; אין כאן תיקון מאושר של ספר המקור.",
+      "en": "The source note names ST 6 in a thoracic comparison. The learning comparison uses ST 16 based on the two primary location descriptions. This is an editorial interpretation pending professional review, not an approved correction to the source book.",
+      "url": "https://iris.who.int/bitstream/handle/10665/353407/9789290613831-eng.pdf?sequence=1"
+    }
+  ]
+}
