@@ -660,7 +660,7 @@ function doWipe(){if(!confirm(t('wipeConfirm1')))return;if(!confirm(t('wipeConfi
   favs=[];LANG='he';applySettings();applyLang();route('home');}
 
 /* ---------- ABOUT ---------- */
-const STORE_URL='https://barakaflalo.github.io/appnest';
+const STORE_URL='https://appnest-store.pages.dev';
 const APP_VER='3.3';
 function toast(msg){let el=document.getElementById('atlas-toast');if(!el){el=document.createElement('div');el.id='atlas-toast';el.style.cssText='position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:#141418;color:#EDE6D6;border:1px solid #C9A84C55;border-radius:20px;padding:9px 16px;font:14px "Segoe UI",sans-serif;z-index:100001;box-shadow:0 6px 20px rgba(0,0,0,.5);opacity:0;transition:opacity .2s;';document.body.appendChild(el);}el.textContent=msg;el.style.opacity='1';clearTimeout(el._t);el._t=setTimeout(function(){el.style.opacity='0';},1800);}
 function shareApp(){var url=location.href.split('#')[0];var data={title:'אטלס הגוף · Body Atlas',text:t('abShareMsg'),url:url};if(navigator.share){navigator.share(data).catch(function(){});return;}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){toast(t('abCopied'));},function(){});return;}try{var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);toast(t('abCopied'));}catch(e){}}
